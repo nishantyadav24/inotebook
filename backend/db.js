@@ -1,17 +1,15 @@
 const mongoose = require('mongoose');
-const mongooseURI = "mongodb://localhost:27017/";
+
+const mongooseURI = 'mongodb://localhost:27017/'; // Replace with your actual MongoDB URI
 
 const connectToMongo = () => {
-    mongoose.connect(mongooseURI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => {
-        console.log("Connected to MongoDB successfully");
-    })
-    .catch((err) => {
-        console.error("Failed to connect to MongoDB", err);
-    });
+    mongoose.connect(mongooseURI, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then(() => {
+            console.log('Connected to MongoDB successfully');
+        })
+        .catch((err) => {
+            console.error('Error connecting to MongoDB:', err);
+        });
 };
 
 module.exports = connectToMongo;
