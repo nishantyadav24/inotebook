@@ -1,18 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // Import the User model
+const { query, validationResult } = require('express-validator');
+const mongoose = require('mongoose');
+// const { Schema } = mongoose;
+const app = express()
+app.use(express.json())
 
-// Create a user using POST "/api/auth/"
-router.get('/', async (req, res) => {
-    try {
-        console.log(req.body);
-        const user = new User(req.body); // Create a new User instance
-        await user.save(); // Save the user to the database
-        res.send('User saved successfully');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Internal Server Error');
-    }
-});
+// Create a user using POST "/api/auth/" doesnt require auth
+ router.post('/', (req,res)=>{
+    res.send("hello")
+    console.log(req.body)
+    const user = User(req.body)
+    user.save()
+    res.send(req.body)
+ })
 
 module.exports = router;
