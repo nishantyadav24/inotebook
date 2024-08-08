@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongooseURI = 'mongodb://localhost:27017/'; // Replace with your actual MongoDB URI
+const mongooseURI = 'mongodb://localhost:27017/inotebook'; // Replace with your actual MongoDB URI
 
 const connectToMongo = () => {
     mongoose.connect(mongooseURI, { useNewUrlParser: true, useUnifiedTopology: true })
