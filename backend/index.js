@@ -8,7 +8,7 @@ const port = 3002
 app.use(express.json())//middlenware to parse json bodies
 // Available routes
 app.use('/api/auth',require('./routes/auth'))
-app.use('/api/notess',require('./routes/notess'))
+app.use('/api/notes',require('./routes/notes'))
 // app.get('/', (re q, res) => {
 //   res.send('Hello World!')
 // })

@@ -111,7 +111,7 @@ router.post('/getUser', fetchuser, async (req, res) => {
       // Use the user ID from the token to retrieve user details
       const userId = req.user.id;
       const user = await User.findById(userId).select("-password"); // Exclude password from the user details
-      res.json(user);
+      // res.json(user);
       res.send(user)
    } catch (error) {
       console.error(error.message);
