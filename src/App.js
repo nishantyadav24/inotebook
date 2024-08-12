@@ -15,10 +15,12 @@ function App() {
     <NoteState>
       <Router>
         <Navbar />
+        <div class="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />  {/* Ensure path is lowercase "about" */}
         </Routes>
+        </div>
       </Router>
     </NoteState>
   );
