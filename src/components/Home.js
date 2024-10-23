@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Notes from './Home'
 import noteContext from '../context/notes/NoteContext'; // Import the correct context
 
 const Home = () => {
@@ -6,10 +7,10 @@ const Home = () => {
   const { notes } = context;  // Destructure notes from context
 
   return (
-    <div className="container"> 
-      <h1>Add a note</h1>
+    <div className="container my-4"> 
+      <h2>Add a note</h2>
     
-      <form className="mb-3">
+      <form className="mb-3 my-5 ">
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -26,15 +27,9 @@ const Home = () => {
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
 
-      <h2>Your notes</h2>
-      {notes.map((note) => {
-        return (
-          <div key={note._id}>
-            <h3>{note.title}</h3>
-            <p>{note.description}</p>
-          </div>
-        );
-      })}
+   
+ 
+      <Notes></Notes>
     </div>
   );
 }
