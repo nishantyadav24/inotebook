@@ -1,21 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 
 import noteContext from '../context/notes/NoteContext'
 import NoteItem from './NoteItem';
+import NoteItem from './AddNote';
 const Notes=()=> {
     const context = useContext(noteContext);
-    const{notes,setNotes}=Context;
+    const{notes,getAllNotes}=Context;
+    useEffect(()=>{
+      getAllNotes()
+    },[  ])
 
   return (
-    <div className='container my-3'>
+    <>
+    <AddNote/>
+    <div className='row my-3'>
         <h2>
            Your notes </h2>
            {notes.map((note)=>{
-            return <NoteItem note={note}/>
+            return <NoteItem key="note._id" note={note}/>
            })
 }
 </div>
+</>
   )
 }
 
